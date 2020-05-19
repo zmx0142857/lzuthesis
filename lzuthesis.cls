@@ -2,10 +2,10 @@
 %
 % 兰州大学本科生毕业论文模板
 % 维护者: 卓铭鑫, 黄洋锐
-% 地址: https://github.com/zmx0142857/man/tree/master/tex/latex/lzuthesis/
+% 地址: https://github.com/zmx0142857/lzuthesis/
 %
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{lzuthesis}[2020/04/29 v0.1.1 Lanzhou University Thesis Template for Bachelor Degree]
+\ProvidesClass{lzuthesis}[2020/05/19 v0.1.1 Lanzhou University Thesis Template for Bachelor Degree]
 
 % [类与选项]
 
@@ -141,6 +141,8 @@
 % 我们要求这个环境至少要占据 85% 才能单独放在一页.
 % 注意:  |\floatpagefraction| 的数值必须小于 |\topfraction|.
 \renewcommand*{\floatpagefraction}{0.85}
+
+\RequirePackage{float} % 浮动体控制, 比如 \begin{figure}[H]
 
 % [图片]
 
@@ -525,3 +527,4 @@
 % v0.0.1	2019-12-16	增加对 ctexart 类的版本检查, 改写帮助手册
 % v0.1.0	2020-01-09	减小列表行距, 按新规范重写模板
 % v0.1.1	2020-04-29	去掉 bm 包, 允许封面标题断行, 增加 section 标题空白
+% v0.1.2	2020-05-19	项目移动到 github.com/zmx0142857/lzuthesis/, 新增 float 包, 目录改为宋体

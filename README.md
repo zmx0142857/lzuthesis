@@ -1,10 +1,10 @@
-# 兰州大学本科生学位论文模板 v0.1.1
+# 兰州大学本科生学位论文模板 v0.1.2
 
-最近更新: 2020-04-29
+最近更新: 2020-05-19
 
 ## 安装
 
-下载 [lzuthesis.zip](https://github.com/zmx0142857/man/releases/tag/v0.1.1) 并解压.
+下载 [lzuthesis.zip](https://github.com/zmx0142857/lzuthesis/releases/tag/v0.1.2) 并解压.
 
 ## 编译指南
 
