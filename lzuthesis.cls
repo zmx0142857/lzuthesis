@@ -4,8 +4,19 @@
 % 维护者: 卓铭鑫, 黄洋锐
 % 地址: https://github.com/zmx0142857/lzuthesis/
 %
+% [修改日志]
+%
+% 版本号: 每修一个小 bug 增加 0.0.1, 重大 bug 增加 0.1.0
+% 版本号	YYYY-MM-DD	详情 
+% v0.0.0	2019-10-24	添加 lzuthesis.cls lzuthesis.tex imgs/
+% v0.0.1	2019-12-16	增加对 ctexart 类的版本检查, 改写帮助手册
+% v0.1.0	2020-01-09	减小列表行距, 按新规范重写模板
+% v0.1.1	2020-04-29	去掉 bm 包, 允许封面标题断行, 增加 section 标题空白
+% v0.1.2	2020-05-19	项目移动到 github.com/zmx0142857/lzuthesis/,
+%						新增 float 包, 目录字体改为宋体, 不加粗
+
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{lzuthesis}[2020/05/19 v0.1.1 Lanzhou University Thesis Template for Bachelor Degree]
+\ProvidesClass{lzuthesis}[2020/05/19 v0.1.2 Lanzhou University Thesis Template for Bachelor Degree]
 
 % [类与选项]
 
@@ -371,8 +382,11 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 \newcommand\maketoc{
-	\songti
+	\let\savedBfseries\bfseries
+	\renewcommand{\bfseries}{}				% 取消目录加粗
 	\tableofcontents						% 生成目录
+	\renewcommand{\bfseries}\savedBfseries
+
 	\newpage
 	\pagenumbering{arabic}					% 页码为阿拉伯数字
 	\fancyhead[L]{兰州大学本科生毕业论文}	% 页眉左边
@@ -518,13 +532,3 @@
 %\def\B#1{\left\{ #1 \right\}}
 
 \endinput
-
-% [修改日志]
-
-% 版本号: 每修一个小 bug 增加 0.0.1, 重大 bug 增加 0.1.0
-% 版本号	YYYY-MM-DD	详情 
-% v0.0.0	2019-10-24	添加 lzuthesis.cls lzuthesis.tex imgs/
-% v0.0.1	2019-12-16	增加对 ctexart 类的版本检查, 改写帮助手册
-% v0.1.0	2020-01-09	减小列表行距, 按新规范重写模板
-% v0.1.1	2020-04-29	去掉 bm 包, 允许封面标题断行, 增加 section 标题空白
-% v0.1.2	2020-05-19	项目移动到 github.com/zmx0142857/lzuthesis/, 新增 float 包, 目录改为宋体
