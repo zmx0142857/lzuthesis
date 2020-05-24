@@ -384,8 +384,10 @@
 \newcommand\maketoc{
 	%\let\savedBfseries\bfseries
 	%\renewcommand{\bfseries}{}				% 取消目录加粗
+	{
 	\songti
 	\tableofcontents						% 生成目录
+	}
 	%\renewcommand{\bfseries}\savedBfseries
 
 	\newpage
