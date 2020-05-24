@@ -13,7 +13,7 @@
 % v0.1.0	2020-01-09	减小列表行距, 按新规范重写模板
 % v0.1.1	2020-04-29	去掉 bm 包, 允许封面标题断行, 增加 section 标题空白
 % v0.1.2	2020-05-19	项目移动到 github.com/zmx0142857/lzuthesis/,
-%						新增 float 包, 目录字体改为宋体, 不加粗
+%						新增 float 包, 目录字体改为宋体
 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{lzuthesis}[2020/05/19 v0.1.2 Lanzhou University Thesis Template for Bachelor Degree]
@@ -81,9 +81,9 @@
 
 % [段前段后]
 
-\RequirePackage{titlesec}
+%\RequirePackage{titlesec} % 引起摘要书签指向错误
 
-\titlespacing{\section}{0pt}{24pt}{18pt} % 段前 24, 段后 18
+%\titlespacing{\section}{0pt}{24pt}{18pt} % 段前 24, 段后 18
 
 % [列表]
 
@@ -382,10 +382,11 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 \newcommand\maketoc{
-	\let\savedBfseries\bfseries
-	\renewcommand{\bfseries}{}				% 取消目录加粗
+	%\let\savedBfseries\bfseries
+	%\renewcommand{\bfseries}{}				% 取消目录加粗
+	\songti
 	\tableofcontents						% 生成目录
-	\renewcommand{\bfseries}\savedBfseries
+	%\renewcommand{\bfseries}\savedBfseries
 
 	\newpage
 	\pagenumbering{arabic}					% 页码为阿拉伯数字
