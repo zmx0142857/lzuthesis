@@ -14,9 +14,10 @@
 % v0.1.1	2020-04-29	去掉 bm 包, 允许封面标题断行, 增加 section 标题空白
 % v0.1.2	2020-05-19	项目移动到 github.com/zmx0142857/lzuthesis/,
 %						新增 float 包, 目录字体改为宋体
+% v0.1.3	2020-05-31	去掉 titlesec 包, 参考文献改为 lzubibliography
 
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
-\ProvidesClass{lzuthesis}[2020/05/19 v0.1.2 Lanzhou University Thesis Template for Bachelor Degree]
+\ProvidesClass{lzuthesis}[2020/05/31 v0.1.3 Lanzhou University Thesis Template for Bachelor Degree]
 
 % [类与选项]
 
@@ -249,7 +250,7 @@
 	\end{figure*}
 	\vspace*{-1.1em} % 加星号的版本自带参考物, 否则前面需要 \hbox{}
 	\begin{center}
-	\heiti \zihao{0} \ziju{1} 毕业论文\par
+	\heiti \zihao{0} \ziju{0.8} 毕业论文\par
 	\vspace*{1em}
 	\zihao{4} \ziju{0.5} (本科生)\par
 	\vspace*{4.1em}
@@ -399,8 +400,7 @@
 }
 
 % [参考文献]
-
-\renewenvironment{bibliography}{
+\newenvironment{lzubibliography}{
 	\zihao{5}
 	\begin{thebibliography}{0}
 		\addcontentsline{toc}{section}{参考文献} % 将参考文献加入目录
